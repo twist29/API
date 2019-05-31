@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registros PODI</title>
+</head>
+<body>
+<h1><center>Historial de registros</center></h1>
+<div class="container">
+
+<table class="table table-striped">
+  <tr>
+     <th>Nombre</th>
+     <th>Destino</th>
+     <th>Entrada</th>
+     <th>Salida</th>
+  </tr>
+  <tr>
+  {% for visita in visitas%}
+    <td> {{ visita.visitante }}</td>
+    <td> {{ visita.destino }}</td>
+    <td> {{ visita.entrada }}</td>
+    <td> {{ visita.salida }}</td>
+    </tr>
+  {%endfor%}  
+</table>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+<table id="example" class="display">
+<thead>
+    <tr>
+        <th>Nombre</th>
+    	<th>Destino</th>
+     	<th>Entrada</th>
+     	<th>Salida</th>
+    </tr>
+<thead>
+</table>
+
+<script >
+$(document).ready(function() {
+$('#example').DataTable( {
+        ajax:  {
+          url: 'http://127.0.0.1:8000/visitantes/?format=json',
+          dataSrc: 'data'
+       }, 
+        columns: [
+        { data: "visitante" },
+        { data: "destino" },
+        { data: "entrada" },
+        { data: "salidas" }]  
+        } ); 
+
+});
+</script>
+
+</body>
+</html>
